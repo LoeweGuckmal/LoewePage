@@ -191,7 +191,8 @@ document.querySelector('#btn1').onclick = function(){
     if (toggled) {
         //alert("haha");
         fullscreen.request(this.parentNode);
-        window.screen.orientation.lock('portrait');
+        //window.screen.orientation.lock();
+        ScreenOrientation.lock("landscape");
         console.log("lock");
     }else {
         colorWindow = window.open("http://192.168.100.168:8880/color?color=bg");
