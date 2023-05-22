@@ -268,7 +268,4 @@ body .twitter svg {
   body .grid {
     transform: rotate(90deg);
   }
-  .btn {
-    size: 500%;
-  }
 }
