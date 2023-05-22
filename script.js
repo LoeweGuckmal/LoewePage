@@ -162,39 +162,40 @@ document.querySelectorAll('.switch').forEach(elem => {
         })
     })
 })
-// (A) LOCK SCREEN ORIENTATION
-function lock (orientation) {
-    // (A1) GO INTO FULL SCREEN FIRST
-    let de = document.documentElement;
-    if (de.requestFullscreen) { de.requestFullscreen(); }
-    else if (de.mozRequestFullScreen) { de.mozRequestFullScreen(); }
-    else if (de.webkitRequestFullscreen) { de.webkitRequestFullscreen(); }
-    else if (de.msRequestFullscreen) { de.msRequestFullscreen(); }
-  
-    // (A2) THEN LOCK ORIENTATION
-    screen.orientation.lock(orientation);
-  }
-  
-  // (B) UNLOCK SCREEN ORIENTATION
-  function unlock () {
-    // (B1) UNLOCK FIRST
-    screen.orientation.unlock();
-  
-    // (B2) THEN EXIT FULL SCREEN
-    if (document.exitFullscreen) { document.exitFullscreen(); }
-    else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); }
-    else if (document.mozCancelFullScreen) { document.mozCancelFullScreen(); }
-    else if (document.msExitFullscreen) { document.msExitFullscreen(); }
-  }
+var fullscreen = {
+    request: function(elem){
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+      } else if (elem.mozRequestFullScreen) {
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+      }
+    },
+    exit: function() {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    }
+  };
 let toggled = false;
 document.querySelector('#btn1').onclick = function(){
     if (toggled) {
-        alert("haha");
-        unlock();
+        //alert("haha");
+        fullscreen.request(this.parentNode);
+        window.screen.orientation.lock('portrait');
+        console.log("lock");
     }else {
         colorWindow = window.open("http://192.168.100.168:8880/color?color=bg");
         setTimeout(() => colorWindow.close(), 200);
-        lock("landscape");
     }
 }
 document.querySelector('#btn2').onclick = function(){
