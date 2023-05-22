@@ -176,7 +176,7 @@ document.querySelector('#btn2').onclick = function(){
         alert("haha");
     }else {
         colorWindow = window.open("http://192.168.100.168:8880/color?color=gelb");
-        setTimeout(() => colorWindow.close(), 300);
+        setTimeout(() => colorWindow.close(), 250);
     }
 }
 document.querySelector('#btn3').onclick = function(){
@@ -184,7 +184,7 @@ document.querySelector('#btn3').onclick = function(){
         alert("haha");
     }else {
         colorWindow = window.open("http://192.168.100.168:8880/color?color=pink");
-        setTimeout(() => colorWindow.close(), 400);
+        setTimeout(() => colorWindow.close(), 100);
     }
 }
 document.querySelector('#btn4').onclick = function(){
