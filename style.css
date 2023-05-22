@@ -264,8 +264,3 @@ body .twitter svg {
   height: 32px;
   fill: #1da1f2;
 }
-@media only screen and (orientation:portrait){
-  body .grid {
-    transform: rotate(90deg);
-  }
-}
