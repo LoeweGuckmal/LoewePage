@@ -1,0 +1,10 @@
+{
+    "name": "Loewe",
+    "short_name": "Loewe",
+    "theme_color": "#262626",
+    "background_color": "#262626",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/"
+}
