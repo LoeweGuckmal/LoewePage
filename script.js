@@ -162,37 +162,10 @@ document.querySelectorAll('.switch').forEach(elem => {
         })
     })
 })
-var fullscreen = {
-    request: function(elem){
-      if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-      } else if (elem.msRequestFullscreen) {
-        elem.msRequestFullscreen();
-      } else if (elem.mozRequestFullScreen) {
-        elem.mozRequestFullScreen();
-      } else if (elem.webkitRequestFullscreen) {
-        elem.webkitRequestFullscreen();
-      }
-    },
-    exit: function() {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
-      } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-      }
-    }
-  };
 let toggled = false;
 document.querySelector('#btn1').onclick = function(){
     if (toggled) {
-        //alert("haha");
-        fullscreen.request(this.parentNode);
-        window.screen.orientation.lock("landscape-primary");
-        console.log("lock");
+        alert("haha");
     }else {
         colorWindow = window.open("http://192.168.100.168:8880/color?color=bg");
         setTimeout(() => colorWindow.close(), 200);
