@@ -1,0 +1,32 @@
+{
+    "name": "Loewe",
+    "short_name": "Loewe",
+    "icons": [
+        {
+            "src": "https://loeweguckmal.github.io/LoewePage/Loewe-x1024.png",
+            "type": "image/png",
+            "sizes": "1024x1024"
+        },
+        {
+          "src": "https://loeweguckmal.github.io/LoewePage/Loewe-x512.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        },
+        {
+          "src": "https://loeweguckmal.github.io/LoewePage/Loewe-x192.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        },
+        {
+          "src": "https://loeweguckmal.github.io/LoewePage/Loewe-x512.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        }
+      ],
+    "theme_color": "#D2D6E9",
+    "background_color": "#D2D6E9",
+    "display": "fullscreen",
+    "orientation": "landscape",
+    "scope": "/",
+    "start_url": "/LoewePage/"
+}
