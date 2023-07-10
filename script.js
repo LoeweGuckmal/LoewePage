@@ -10,8 +10,8 @@ function button(color){
         setColor(color);
     }
 }
-function setColor(color){
-    fetch("http://192.168.100.168:8880/color?color=" + color, {referrerPolicy: "unsafe-url"});
+async function setColor(color){
+    fetch("https://192.168.100.168:8882/color?color=" + color);
 }
 document.querySelector('#btn7').onclick = function(){
     if(toggled) {
