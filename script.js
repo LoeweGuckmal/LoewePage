@@ -33,3 +33,8 @@ document.querySelector('#btn7').onclick = function(){
     }
     toggled = !toggled;
 }
+document.addEventListener('keydown', function(event) {
+    if (event.key == "F1") {
+        fetch("https://192.168.100.168:8882/sdk?mode=up&amount=10");
+    }
+});
