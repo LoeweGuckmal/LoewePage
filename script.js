@@ -35,6 +35,10 @@ document.querySelector('#btn7').onclick = function(){
 }
 document.addEventListener('keydown', function(event) {
     if (event.key == "F1") {
-        fetch("https://192.168.100.168:8882/sdk?mode=up&amount=10");
+        fetch('https://192.168.100.168:8882/sdk?mode=up&amount=10&getColor=true').then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            document.body.style.backgroundColor = data[0];
+        });
     }
 });
