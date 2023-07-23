@@ -59,7 +59,7 @@ function updateBg(){
         })
     }
 }
-setInterval(updateBg, 200);
+setInterval(updateBg, 1000);
 setInterval(function() {
     if(pressing1) {
         pressing1 = false;
