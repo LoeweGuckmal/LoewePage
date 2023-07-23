@@ -52,7 +52,7 @@ document.addEventListener('keydown', function(event) {
 });
 function updateBg(){
     if(!pressing1 && !pressing2) {
-        fetch('https://192.168.100.168:8882/sdk?mode=getColor').then(function (response) {
+        fetch('https://192.168.100.168:8882/sdk?mode=getCurrentColor').then(function (response) {
             return response.json();
         }).then(function (data) {
             document.body.style.backgroundColor = data[0];    
