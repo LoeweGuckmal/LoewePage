@@ -33,8 +33,12 @@ document.querySelector('#btn7').onclick = function(){
     }
     toggled = !toggled;
 }
+let pressing1 = false;
+let pressing2 = false;
 document.addEventListener('keydown', function(event) {
     if (event.key == "F1") {
+        pressing1 = true;
+        pressing2 = true;
         fetch('https://192.168.100.168:8882/sdk?mode=up&amount=10&getColor=true').then(function (response) {
             return response.json();
         }).then(function (data) {
@@ -42,3 +46,20 @@ document.addEventListener('keydown', function(event) {
         });
     }
 });
+function updateBg(){
+    if(!pressing1 && !pressing2) {
+        fetch('https://192.168.100.168:8882/sdk?mode=getColor').then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            document.body.style.backgroundColor = data[0];    
+        })
+    }
+}
+setInterval(updateBg, 200);
+setInterval(function() {
+    if(pressing1) {
+        pressing1 = false;
+    } else if(pressing2) {
+        pressing2 = false;
+    }
+}, 1000);
