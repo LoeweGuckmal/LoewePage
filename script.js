@@ -11,7 +11,7 @@ function button(color){
     }
 }
 async function setColor(color){
-    fetch("https://192.168.100.168:8882/color?color=" + color).then(function (response) {
+    fetch("https://192.168.1.168:8882/color?color=" + color).then(function (response) {
         return response.json();
     }).then(function (data) {
         document.body.style.backgroundColor = data[0];
@@ -43,7 +43,7 @@ document.addEventListener('keydown', function(event) {
     if (event.key == "F1") {
         pressing1 = true;
         pressing2 = true;
-        fetch('https://192.168.100.168:8882/sdk?mode=up&amount=10&getColor=true').then(function (response) {
+        fetch('https://192.168.1.168:8882/sdk?mode=up&amount=10&getColor=true').then(function (response) {
             return response.json();
         }).then(function (data) {
             document.body.style.backgroundColor = data[0];
@@ -52,7 +52,7 @@ document.addEventListener('keydown', function(event) {
 });
 function updateBg(){
     if(!pressing1 && !pressing2) {
-        fetch('https://192.168.100.168:8882/sdk?mode=getCurrentColor').then(function (response) {
+        fetch('https://192.168.1.168:8882/sdk?mode=getCurrentColor').then(function (response) {
             return response.json();
         }).then(function (data) {
             document.body.style.backgroundColor = data[0];    
