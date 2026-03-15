@@ -77,7 +77,8 @@ function updateBg(){
             .catch(error => console.error("Fetch error:", error));
     }
 }
-setInterval(updateBg, 1000);
+updateBg();
+setInterval(updateBg, 500);
 setInterval(function() {
     if(pressing1) {
         pressing1 = false;
